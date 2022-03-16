@@ -1,12 +1,14 @@
 {
   "name": "mern-tutorial",
   "version": "1.0.0",
+  "proxy":"http://localhost:5000",
   "description": "Goalsetter app",
   "main": "server.js",
   "scripts": {
     "start": "node backend/server.js",
     "server": "nodemon backend/server.js",
-    "client": "npm start --prefix frontend"
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Silas Mokone",
   "license": "ISC",
@@ -20,6 +22,7 @@
     "mongoose": "^6.2.6"
   },
   "devDependencies": {
+    "concurrently": "^7.0.0",
     "nodemon": "^2.0.15"
   }
 }
